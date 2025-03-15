@@ -1,0 +1,285 @@
+/* Reset & Variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gray: rgb(197, 197, 196);
+    --dark-color: rgba(139, 139, 138, 0.786);
+    --black: #444;
+    --light-color: #666;
+    --primary-color: #007bff;
+    --dark-gray: #333;
+    --white: #fff;
+    --soft-gray: #f8f9fa;
+    --border-gray: #eee;
+    --green: green;
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.main-page {
+    margin-top: 100px;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.heading::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 0.01rem;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: -1000;
+}
+
+.heading span {
+    font-size: 3rem;
+    padding: 1rem 1rem;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    color: var(--black);
+    background: var(--white);
+    border: thick double var(--gray);
+}
+
+section {
+    padding: 5rem 9%;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1040;
+}
+
+.dropdown-menu {
+    z-index: 1050;
+}
+
+.navbar-search {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 300px;
+    background-color: var(--white);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.navbar-search .form-control {
+    border: none;
+    outline: none;
+    border-radius: 5px 0 0 5px;
+    width: 350px;
+    box-shadow: none;
+}
+
+.navbar-search .btn {
+    border: none !important;
+}
+
+.navbar-search .btn:hover {
+    color: var(--green);
+    background-color: var(--white) !important;
+}
+
+.pages-bar {
+    background-color: var(--soft-gray);
+    padding: 10px 0;
+    position: fixed;
+    top: 56px;
+    width: 100%;
+    z-index: 1030;
+    box-shadow: var(--box-shadow);
+}
+
+.pages-bar a {
+    margin: 0 15px;
+    color: var(--dark-gray);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.pages-bar a:hover {
+    color: var(--primary-color);
+}
+
+.pages-bar-link:hover {
+    color: var(--green) !important;
+}
+
+.navbar-brand {
+    color: var(--green) !important;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.nav-item .fa-user {
+    color: var(--green) !important;
+}
+
+.Home-books {
+    background: url("../../../public/images/banner-bg.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.Home-books .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.Home-books .row .content {
+    flex: 25rem;
+}
+
+.Home-books .row .books-slider {
+    flex: 1 1 40rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.Home-books .row .books-slider a img {
+    transition: 0.5s;
+    height: 20rem;
+}
+
+.Home-books .row .books-slider a:hover img {
+    transform: scale(0.9);
+}
+
+.Home-books .row .content h3 {
+    color: var(--black);
+    font-size: 3.5rem;
+}
+
+.Home-books .row .content p {
+    color: var(--light-color);
+    font-size: 1rem;
+    line-height: 2;
+    padding: 1rem 0;
+}
+
+.Home-books .row .books-slider .stand {
+    width: 100%;
+    margin-top: -2rem;
+}
+
+.latest-books .latest-slider .box {
+    width: 20rem;
+    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+    border: 0.5px solid var(--gray);
+    border-radius: 3px;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.latest-books .latest-slider .box .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 1rem;
+    background: linear-gradient(
+        15deg,
+        var(--border-gray) 30%,
+        var(--white) 30.1%
+    );
+}
+
+.latest-books .latest-slider .box .image img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.latest-books .latest-slider .box:hover {
+    transform: scale(0.9);
+}
+
+.latest-books .latest-slider .box .content {
+    background: var(--border-gray);
+    padding: 1.5rem;
+}
+
+.latest-books .latest-slider .box .content h3 {
+    font-size: 2rem;
+    color: var(--dark-gray);
+}
+
+.library {
+    background: var(--border-gray);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.library .content {
+    flex: 42rem;
+}
+
+.library .image {
+    flex: 1 1 30rem;
+}
+
+.library .image img {
+    width: 100%;
+}
+
+.library .content h3 {
+    color: var(--green);
+    font-size: 2.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.library .content h1 {
+    color: var(--black);
+    font-size: 4rem;
+}
+
+.library .content p {
+    padding: 1rem 0;
+    color: var(--light-color);
+    font-size: 1.2rem;
+    line-height: 2;
+}
+
+footer {
+    background-color: #065d3a;
+}
+
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10000;
+    background: #f7f7f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader-container.active {
+    display: none;
+}
+
+.loader-container img {
+    height: 10rem;
+}
