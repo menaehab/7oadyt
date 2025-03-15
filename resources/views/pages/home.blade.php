@@ -2,6 +2,7 @@
 @section('page-title', __('keywords.home'))
 
 @section('content')
+    <!-- Home-books starts -->
     <section class="Home-books text-center" id="Home-books">
         <div class="row">
             <div class="content">
@@ -24,6 +25,7 @@
             </div>
         </div>
     </section>
+    <!-- Home-books ends -->
 
     <!--latest section starts-->
     <section class="latest-books" id="latest-books">
@@ -40,4 +42,19 @@
         </div>
     </section>
     <!--latest section ends-->
+
+    <!-- library section starts  -->
+    <section class="library">
+        <div class="image">
+            <img src="images/deal-img.jpg" alt="مكتبة رقمية">
+        </div>
+        <div class="content text-end">
+            <h3>{{ __('keywords.world_of_knowledge') }}</h3>
+            <h1>{{ __('keywords.online_libary') }}</h1>
+            <p>{{ __('keywords.online_libary_description') }}</p>
+            <a href="#" class="btn btn-lg btn-success"> {{ __('keywords.lets_go') }}</a>
+        </div>
+
+    </section>
+    <!-- library section ends -->
 @endsection

@@ -1,7 +1,22 @@
+/* Reset & Variables */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+:root {
+    --gray: rgb(197, 197, 196);
+    --dark-color: rgba(139, 139, 138, 0.786);
+    --black: #444;
+    --light-color: #666;
+    --primary-color: #007bff;
+    --dark-gray: #333;
+    --white: #fff;
+    --soft-gray: #f8f9fa;
+    --border-gray: #eee;
+    --green: green;
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
 
 .main-page {
@@ -30,10 +45,10 @@
     font-size: 3rem;
     padding: 1rem 1rem;
     border-radius: 5px;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-    color: #444;
-    background: #fff;
-    border: thick double rgb(197, 197, 196);
+    box-shadow: var(--box-shadow);
+    color: var(--black);
+    background: var(--white);
+    border: thick double var(--gray);
 }
 
 section {
@@ -56,7 +71,7 @@ section {
     left: 50%;
     transform: translateX(-50%);
     max-width: 300px;
-    background-color: white;
+    background-color: var(--white);
     padding: 5px;
     border-radius: 5px;
 }
@@ -68,58 +83,49 @@ section {
     width: 350px;
     box-shadow: none;
 }
+
 .navbar-search .btn {
     border: none !important;
 }
+
 .navbar-search .btn:hover {
-    color: green;
-    background-color: white !important;
+    color: var(--green);
+    background-color: var(--white) !important;
 }
 
 .pages-bar {
-    background-color: #f8f9fa;
+    background-color: var(--soft-gray);
     padding: 10px 0;
     position: fixed;
     top: 56px;
     width: 100%;
     z-index: 1030;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--box-shadow);
 }
 
 .pages-bar a {
     margin: 0 15px;
-    color: #333;
+    color: var(--dark-gray);
     text-decoration: none;
     font-weight: bold;
 }
 
 .pages-bar a:hover {
-    color: #007bff;
-}
-
-@media (max-width: 991px) {
-    .navbar-search {
-        position: static;
-        transform: none;
-        width: 100%;
-        max-width: none;
-        margin-top: 10px;
-    }
-
-    .navbar-search .form-control {
-        width: calc(100% - 50px);
-    }
+    color: var(--primary-color);
 }
 
 .pages-bar-link:hover {
-    color: green !important;
+    color: var(--green) !important;
 }
 
 .navbar-brand {
-    color: green !important;
+    color: var(--green) !important;
+    font-size: 1.8rem;
+    font-weight: bold;
 }
+
 .nav-item .fa-user {
-    color: green !important;
+    color: var(--green) !important;
 }
 
 .Home-books {
@@ -148,19 +154,10 @@ section {
 .Home-books .row .books-slider a img {
     transition: 0.5s;
     height: 20rem;
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -o-transition: 0.5s;
 }
 
 .Home-books .row .books-slider a:hover img {
     transform: scale(0.9);
-}
-
-.Home-books .row .books-slider .stand {
-    width: 100%;
-    margin-top: -2rem;
 }
 
 .Home-books .row .content h3 {
@@ -175,22 +172,9 @@ section {
     padding: 1rem 0;
 }
 
-@media (max-width: 991px) {
-    section {
-        padding: 3rem 2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    html {
-        scroll-padding-top: 0;
-    }
-    body {
-        padding-bottom: 6rem;
-    }
-}
-
-@media (max-width: 450px) {
+.Home-books .row .books-slider .stand {
+    width: 100%;
+    margin-top: -2rem;
 }
 
 .latest-books .latest-slider .box {
@@ -198,14 +182,10 @@ section {
     margin: 2rem 0;
     position: relative;
     overflow: hidden;
-    border: 0.5px solid rgb(197, 197, 196);
+    border: 0.5px solid var(--gray);
     border-radius: 3px;
     text-align: center;
     transition: 0.5s;
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -o-transition: 0.5s;
 }
 
 .latest-books .latest-slider .box .image {
@@ -214,7 +194,11 @@ section {
     align-items: center;
     height: 100%;
     padding: 1rem;
-    background: linear-gradient(15deg, #eee 30%, #fff 30.1%);
+    background: linear-gradient(
+        15deg,
+        var(--border-gray) 30%,
+        var(--white) 30.1%
+    );
 }
 
 .latest-books .latest-slider .box .image img {
@@ -225,18 +209,52 @@ section {
 
 .latest-books .latest-slider .box:hover {
     transform: scale(0.9);
-    -webkit-transform: scale(0.9);
-    -moz-transform: scale(0.9);
-    -ms-transform: scale(0.9);
-    -o-transform: scale(0.9);
 }
 
 .latest-books .latest-slider .box .content {
-    background: #eee;
+    background: var(--border-gray);
     padding: 1.5rem;
 }
 
 .latest-books .latest-slider .box .content h3 {
     font-size: 2rem;
-    color: black;
+    color: var(--dark-gray);
+}
+
+.library {
+    background: var(--border-gray);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.library .content {
+    flex: 42rem;
+}
+
+.library .image {
+    flex: 1 1 30rem;
+}
+
+.library .image img {
+    width: 100%;
+}
+
+.library .content h3 {
+    color: var(--green);
+    font-size: 2.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.library .content h1 {
+    color: var(--black);
+    font-size: 4rem;
+}
+
+.library .content p {
+    padding: 1rem 0;
+    color: var(--light-color);
+    font-size: 1.2rem;
+    line-height: 2;
 }
