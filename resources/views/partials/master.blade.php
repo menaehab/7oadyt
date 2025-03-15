@@ -8,6 +8,7 @@
     <div class="main-page">
         @yield('content')
     </div>
+    @extends('partials.footer')
 
     @include('partials.scripts')
 </body>

@@ -46,15 +46,14 @@
     <!-- library section starts  -->
     <section class="library">
         <div class="image">
-            <img src="images/deal-img.jpg" alt="مكتبة رقمية">
+            <img src="images/deal-img.jpg" alt="{{ __('keywords.online_libary') }}">
         </div>
         <div class="content text-end">
             <h3>{{ __('keywords.world_of_knowledge') }}</h3>
-            <h1>{{ __('keywords.online_libary') }}</h1>
+            <h1>{{ __('keywords.online_libary_free') }}</h1>
             <p>{{ __('keywords.online_libary_description') }}</p>
             <a href="#" class="btn btn-lg btn-success"> {{ __('keywords.lets_go') }}</a>
         </div>
-
     </section>
     <!-- library section ends -->
 @endsection
