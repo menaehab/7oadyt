@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 
 @include('partials.head')
 
 <body>
     @extends('partials.header')
-    @yield('content')
+    <div class="main-page">
+        @yield('content')
+    </div>
 
     @include('partials.scripts')
 </body>
