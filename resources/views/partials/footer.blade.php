@@ -2,12 +2,12 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6 text-center text-md-end">
-                <h5 class="fw-bold text-white">{{ __('keywords.website_title') }}</h5>
+                <h2 class="fw-bold text-white">{{ __('keywords.website_title') }}</h2>
                 <p class="text-white">{{ __('keywords.website_description') }}</p>
             </div>
 
             <div class="col-md-6 text-center text-md-start">
-                <h5 class="fw-bold text-white">{{ __('keywords.follow_us') }}</h5>
+                <h2 class="fw-bold text-white">{{ __('keywords.follow_us') }}</h2>
                 <div>
                     <a href="#" class="text-white mx-2"><i class="fab fa-facebook fa-lg"></i></a>
                     <a href="#" class="text-white mx-2"><i class="fab fa-twitter fa-lg"></i></a>
