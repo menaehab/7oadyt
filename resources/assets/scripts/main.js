@@ -36,3 +36,13 @@ const swiper1 = new Swiper(".latest-slider", {
         },
     },
 });
+
+function loader() {
+    document.querySelector(".loader-container").classList.add("active");
+}
+
+function fadeOut() {
+    setTimeout(loader, 4000);
+}
+
+document.addEventListener("DOMContentLoaded", fadeOut);
