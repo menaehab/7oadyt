@@ -74,7 +74,7 @@
 </nav>
 
 <div class="pages-bar text-center">
-    <a class="pages-bar-link" href="#">{{ __('keywords.main') }}</a>
+    <a class="pages-bar-link" href="{{ route('home') }}">{{ __('keywords.main') }}</a>
     <a class="pages-bar-link" href="#">{{ __('keywords.books') }}</a>
     <a class="pages-bar-link" href="#">{{ __('keywords.videos') }}</a>
     <a class="pages-bar-link" href="#">{{ __('keywords.sounds') }}</a>
