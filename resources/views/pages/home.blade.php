@@ -56,4 +56,8 @@
         </div>
     </section>
     <!-- library section ends -->
+
+    <div class="loader-container">
+        <img src="images/loader-img.gif" alt="">
+    </div>
 @endsection

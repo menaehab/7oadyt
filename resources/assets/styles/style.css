@@ -304,3 +304,22 @@ footer {
     background-color: #198754;
     color: white;
 }
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: green;
+    outline: green;
+}
+
+.pagination .active .page-link {
+    background-color: green;
+    border-color: green;
+}
+
+.pagination a.page-link {
+    color: green !important;
+}
+
+.pagination .page-link {
+    box-shadow: none;
+}
