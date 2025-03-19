@@ -6,15 +6,21 @@ use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 use Illuminate\Database\Eloquent\Model;
 
-class Video extends Model
+class Content extends Model
 {
     use HasSlug;
     protected $fillable = [
-        'title',
-        'slug',
-        'description',
-        'path',
-        'image',
+        "name",
+        "category_id",
+        "slug",
+        "file_path",
+        "type",
+        "image",
+        "description",
+    ];
+
+    protected $casts = [
+        "category_id" => "integer",
     ];
 
     /**
@@ -37,8 +43,10 @@ class Video extends Model
         return 'slug';
     }
 
-    public function categories()
+
+    public function category()
     {
-        return $this->morphToMany(Category::class, 'categoryable');
+        return $this->belongsTo(Category::class);
     }
+
 }

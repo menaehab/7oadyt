@@ -34,18 +34,9 @@ class Category extends Model
         return 'slug';
     }
 
-    public function books()
+    public function contents()
     {
-        return $this->morphedByMany(Book::class,'categoryable');
+        return $this->hasMany(Content::class);
     }
 
-    public function videos()
-    {
-        return $this->morphedByMany(Video::class,'categoryable');
-    }
-
-    public function audios()
-    {
-        return $this->morphedByMany(Video::class,'categoryable');
-    }
 }
