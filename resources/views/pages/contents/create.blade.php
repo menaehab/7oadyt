@@ -91,7 +91,7 @@
                                 @endfor
                             </div>
 
-                            <label>الإجابة الصحيحة:</label>
+                            <label>{{ __('keywords.correct_answer') }}:</label>
                             <select name="questions[{{ $index }}][correct_choice]" class="form-select">
                                 @for ($i = 0; $i < 4; $i++)
                                     <option value="{{ $i }}"
@@ -101,7 +101,6 @@
                                 @endfor
                             </select>
 
-                            <!-- زر حذف السؤال -->
                             <button type="button" class="btn btn-danger mt-2 remove-question">حذف السؤال</button>
                         </div>
                         @php $questionIndex = $index + 1; @endphp

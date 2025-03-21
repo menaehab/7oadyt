@@ -26,7 +26,7 @@ class ContentRequest extends FormRequest
             'category_id' => 'required|exists:categories,id',
             'type' => 'required|in:pdf,video,audio',
             'file' => [
-                request()->route('content')->hasMedia('uploads') ? 'nullable' : 'required',
+                optional(request()->route('content'))->hasMedia('uploads') ? 'nullable' : 'required',
                 'file',
                 'max:50480',
                 function ($attribute, $value, $fail) {
