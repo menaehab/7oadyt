@@ -26,12 +26,19 @@
 
             <div class="row">
                 <div class="col-md-6 mb-3">
-                    <label class="form-label">{{ __('keywords.file') }}:</label>
-                    <input type="text" value="{{ $content->file }}" class="form-control" disabled>
+                    @if ($content->hasMedia('uploads'))
+                        <p>ملف حالي: <a class="text-success text-decoration-none"
+                                href="{{ $content->getFirstMediaUrl('uploads') }}"
+                                target="_blank">{{ __('keywords.show') }}</a></p>
+                    @endif
                 </div>
                 <div class="col-md-6 mb-3">
-                    <label class="form-label">{{ __('keywords.image') }}:</label>
-                    <input type="text" value="{{ $content->image }}" class="form-control" disabled>
+                    @if ($content->hasMedia('images'))
+                        <p>صورة حالية: <a class="text-success text-decoration-none"
+                                href="{{ $content->getFirstMediaUrl('images') }}"
+                                target="_blank">{{ __('keywords.show') }}</a>
+                        </p>
+                    @endif
                 </div>
             </div>
 

@@ -111,7 +111,7 @@
                 @enderror
             </div>
 
-            <div class="d-grid">
+            <div class="">
                 <button type="button" id="add-question" class="btn btn-outline-success">
                     {{ __('keywords.add_new_question') }}
                 </button>
@@ -119,7 +119,7 @@
 
             <hr>
 
-            <div class="d-grid">
+            <div class="">
                 <button type="submit" class="btn btn-success">{{ __('keywords.save') }}</button>
             </div>
 
