@@ -25,8 +25,13 @@
                             <i class="fas fa-user"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#">{{ __('keywords.profile') }}</a></li>
-                            <li><a class="dropdown-item" href="#">{{ __('keywords.settings') }}</a></li>
+                            @if (Auth::user()->hasRole('admin'))
+                                <li><a class="dropdown-item"
+                                        href="{{ route('categories.index') }}">{{ __('keywords.categories') }}
+                                    </a></li>
+                            @endif
+                            <li><a class="dropdown-item"
+                                    href="{{ route('contents.index') }}">{{ __('keywords.contents') }}</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -39,18 +44,21 @@
                             </li>
                         </ul>
                     </li>
-
-                    <li class="nav-item d-lg-none mt-5">
-                        <a class="nav-link mt-2 text-end" href="#">{{ __('keywords.profile') }}</a>
+                    <div class="mt-5"></div>
+                    @if (Auth::user()->hasRole('admin'))
+                        <li class="nav-item d-lg-none">
+                            <a class="nav-link mt-2 text-end"
+                                href="{{ route('categories.index') }}">{{ __('keywords.categories') }}</a>
+                        </li>
+                    @endif
+                    <li class="nav-item d-lg-none">
+                        <a class="nav-link mt-2 text-end" href="#">{{ __('keywords.contents') }}</a>
                     </li>
                     <li class="nav-item d-lg-none">
-                        <a class="nav-link mt-2 text-end" href="#">{{ __('keywords.settings') }}</a>
-                    </li>
-                    <li class="nav-item d-lg-none">
-                        <form action="{{ route('logout') }}" method="POST">
+                        <form action="{{ route('logout') }}" method="POST" dir="rtl">
                             @csrf
                             <button type="submit"
-                                class="nav-link mt-2 text-danger text-end">{{ __('keywords.logout') }}</button>
+                                class="nav-link mt-2 text-danger">{{ __('keywords.logout') }}</button>
                         </form>
                     </li>
                 </ul>

@@ -46,3 +46,26 @@ function fadeOut() {
 }
 
 document.addEventListener("DOMContentLoaded", fadeOut);
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".delete-form").forEach((button) => {
+        button.addEventListener("click", function () {
+            let slug = this.getAttribute("data-slug");
+
+            Swal.fire({
+                title: "هل أنت متأكد؟",
+                text: "لن تتمكن من استعادة هذا العنصر!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#d33",
+                cancelButtonColor: "#3085d6",
+                confirmButtonText: "نعم، احذفه!",
+                cancelButtonText: "إلغاء",
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById(`delete-form-${slug}`).submit();
+                }
+            });
+        });
+    });
+});

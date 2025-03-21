@@ -1,7 +1,7 @@
 @extends('partials.master')
 @section('page-title', __('Register'))
 @section('content')
-    <div class="auth-wrapper" style="height: 70vh">
+    <div class="auth-wrapper my-5" style="height: 70vh">
         <div class="auth-container">
             <form method="POST" action="{{ route('register') }}" class="tab-content" dir="rtl">
                 @csrf

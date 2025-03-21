@@ -70,17 +70,21 @@ section {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    max-width: 300px;
+    max-width: 350px;
+    width: 100%;
     background-color: var(--white);
     padding: 5px;
     border-radius: 5px;
+    display: flex;
+    align-items: center;
 }
 
 .navbar-search .form-control {
+    flex: 1;
+    min-width: 200px;
     border: none;
     outline: none;
     border-radius: 5px 0 0 5px;
-    width: 350px;
     box-shadow: none;
 }
 
@@ -303,4 +307,23 @@ footer {
 .dropdown-item:hover {
     background-color: #198754;
     color: white;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: green;
+    outline: green;
+}
+
+.pagination .active .page-link {
+    background-color: green;
+    border-color: green;
+}
+
+.pagination a.page-link {
+    color: green !important;
+}
+
+.pagination .page-link {
+    box-shadow: none;
 }

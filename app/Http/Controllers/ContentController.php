@@ -1,0 +1,148 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Choice;
+use App\Models\Content;
+use App\Models\Category;
+use App\Models\Question;
+use App\Http\Requests\ContentRequest;
+
+class ContentController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        $contents = Content::paginate(10);
+        return view("pages.contents.index", compact("contents"));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        $categories = Category::all();
+        return view("pages.contents.create", compact("categories"));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(ContentRequest $request)
+    {
+        $data = $request->validated();
+
+        $content = Content::create($data);
+
+        if ($request->hasFile('file')) {
+            $content->addMedia($request->file('file'))->toMediaCollection('uploads');
+        }
+
+        if ($request->hasFile('image')) {
+            $content->addMedia($request->file('image'))->toMediaCollection('images');
+        }
+
+        $this->syncQuestions($content, $request->questions ?? []);
+
+        return redirect()->route("contents.index")->with("success", __('keywords.created_successfully'));
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(Content $content)
+    {
+        return view('pages.contents.show', compact('content'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(Content $content)
+    {
+        $categories = Category::all();
+        return view('pages.contents.edit', compact('content', 'categories'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(ContentRequest $request, Content $content)
+    {
+        $data = $request->validated();
+        $content->update($data);
+
+        if ($request->hasFile('file')) {
+            $content->clearMediaCollection('uploads');
+            $content->addMedia($request->file('file'))->toMediaCollection('uploads');
+        }
+
+        if ($request->hasFile('image')) {
+            $content->clearMediaCollection('images');
+            $content->addMedia($request->file('image'))->toMediaCollection('images');
+        }
+
+        $this->syncQuestions($content, $request->questions ?? []);
+
+        return redirect()->route("contents.index")->with("success", __('keywords.updated_successfully'));
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Content $content)
+    {
+        $content->delete();
+        return redirect()->route('contents.index')->with('success', __('keywords.deleted_successfully'));
+    }
+
+    /**
+     * Sync questions and choices with the content.
+     */
+    private function syncQuestions(Content $content, array $questions)
+    {
+        $newQuestionIds = [];
+
+        foreach ($questions as $questionData) {
+            if (isset($questionData['id'])) {
+                $question = Question::updateOrCreate(
+                    ['id' => $questionData['id']],
+                    ['question' => $questionData['question'], 'content_id' => $content->id]
+                );
+            } else {
+                $question = $content->questions()->create(['question' => $questionData['question']]);
+            }
+
+            $newQuestionIds[] = $question->id;
+            $newChoiceIds = [];
+
+            foreach ($questionData['choices'] as $index => $choiceData) {
+                if (isset($choiceData['id'])) {
+                    $choice = Choice::updateOrCreate(
+                        ['id' => $choiceData['id']],
+                        [
+                            'choice' => $choiceData['choice'],
+                            'is_correct' => $index == $questionData['correct_choice'],
+                            'question_id' => $question->id
+                        ]
+                    );
+                } else {
+                    $choice = $question->choices()->create([
+                        'choice' => $choiceData['choice'],
+                        'is_correct' => $index == $questionData['correct_choice']
+                    ]);
+                }
+
+                $newChoiceIds[] = $choice->id;
+            }
+
+            $question->choices()->whereNotIn('id', $newChoiceIds)->delete();
+        }
+
+        $content->questions()->whereNotIn('id', $newQuestionIds)->delete();
+    }
+
+}
