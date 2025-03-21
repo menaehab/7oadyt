@@ -3,19 +3,19 @@
 namespace App\Models;
 
 use Spatie\Sluggable\HasSlug;
+use Spatie\MediaLibrary\HasMedia;
 use Spatie\Sluggable\SlugOptions;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Content extends Model
+class Content extends Model implements HasMedia
 {
-    use HasSlug;
+    use HasSlug,InteractsWithMedia;
     protected $fillable = [
         "name",
         "category_id",
         "slug",
-        "file_path",
         "type",
-        "image",
         "description",
     ];
 
@@ -41,6 +41,12 @@ class Content extends Model
     public function getRouteKeyName()
     {
         return 'slug';
+    }
+
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('uploads');
+        $this->addMediaCollection('images');
     }
 
 

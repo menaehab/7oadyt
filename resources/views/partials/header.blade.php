@@ -30,7 +30,8 @@
                                         href="{{ route('categories.index') }}">{{ __('keywords.categories') }}
                                     </a></li>
                             @endif
-                            <li><a class="dropdown-item" href="#">{{ __('keywords.settings') }}</a></li>
+                            <li><a class="dropdown-item"
+                                    href="{{ route('contents.index') }}">{{ __('keywords.contents') }}</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -51,7 +52,7 @@
                         </li>
                     @endif
                     <li class="nav-item d-lg-none">
-                        <a class="nav-link mt-2 text-end" href="#">{{ __('keywords.settings') }}</a>
+                        <a class="nav-link mt-2 text-end" href="#">{{ __('keywords.contents') }}</a>
                     </li>
                     <li class="nav-item d-lg-none">
                         <form action="{{ route('logout') }}" method="POST" dir="rtl">

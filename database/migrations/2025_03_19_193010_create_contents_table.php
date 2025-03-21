@@ -17,8 +17,6 @@ return new class extends Migration
             $table->foreignId('category_id')->constrained()->cascadeOnDelete();
             $table->string('slug')->unique();
             $table->enum('type', ['pdf', 'video', 'audio']);
-            $table->text('file_path')->nullable();
-            $table->text('image')->nullable();
             $table->text('description')->nullable();
             $table->timestamps();
         });
