@@ -19,6 +19,13 @@ class BrowseController extends Controller
     public function show($slug)
     {
         $content = Content::where("slug",$slug)->firstOrFail();
-        return view("pages.content-show", compact("content"));
+        if($content->type == "pdf") {
+            return view("pages.content-detail.pdf-show", compact("content"));
+        } else if ($content->type == "video") {
+            return view("pages.content-detail.video-show", compact("content"));
+        } else if ($content->type == "audio") {
+            return view("pages.content-detail.audio-show", compact("content"));
+        }
+        return to_route('home');
     }
 }

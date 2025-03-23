@@ -73,4 +73,6 @@ return [
     'content_browse' => 'تصفح المحتوى',
     'read_more' => 'اظهار المزيد',
     'all' => 'الكل',
+    'audio_not_supported' => 'متصفحك لا يدعم تشغيل الصوت',
+    'video_not_supported' => 'متصفحك لا يدعم تشغيل الفيديو',
 ];
