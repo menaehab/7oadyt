@@ -2,11 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BrowseController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\CategoryController;
 
 Route::get("/",[HomeController::class,"index"])->name("home");
-
+Route::get("/browse/{type?}",[BrowseController::class,"index"])->name("browse");
+Route::get("/show/{slug}",[BrowseController::class,"show"])->name("show");
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

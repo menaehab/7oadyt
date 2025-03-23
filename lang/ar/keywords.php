@@ -70,4 +70,7 @@ return [
     'back' => 'العودة',
     'edit_questions' => 'تعديل الاسئلة',
     'show' => 'عرض',
+    'content_browse' => 'تصفح المحتوى',
+    'read_more' => 'اظهار المزيد',
+    'all' => 'الكل',
 ];

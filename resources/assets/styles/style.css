@@ -327,3 +327,12 @@ footer {
 .pagination .page-link {
     box-shadow: none;
 }
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-text {
+    flex-grow: 1;
+}
