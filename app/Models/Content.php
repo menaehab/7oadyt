@@ -60,4 +60,9 @@ class Content extends Model implements HasMedia
         return $this->hasMany(Question::class);
     }
 
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 }
