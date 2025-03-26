@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BrowseController;
@@ -13,11 +14,12 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
     ])->group(function () {
-        // Route::get('/dashboard', function () {
-            //     return view('dashboard');
-            // })->name('dashboard');
 
     Route::get("/show/{slug}",[BrowseController::class,"show"])->name("show");
+
+    Route::post('contents/review/create', [ReviewController::class, 'store'])->name('reviews.store');
+    Route::delete('contents/review/{review}', [ReviewController::class,'destroy'])->name('reviews.destroy');
+
     Route::middleware('role:admin')->group(function () {
         Route::resource('categories', CategoryController::class);
         Route::resource('contents',ContentController::class);

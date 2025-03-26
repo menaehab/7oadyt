@@ -9,5 +9,7 @@
                 {{ __('keywords.audio_not_supported') }}
             </audio>
         </div>
+        <x-review-section :content-id="$content->id" :reviews="$reviews" />
+
     </div>
 @endsection
