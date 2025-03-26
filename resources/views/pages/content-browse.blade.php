@@ -7,6 +7,9 @@
                 @foreach ($contents as $content)
                     <x-content-card :title="$content->name" :image="$content->getFirstMediaUrl('images') ?: asset('images/book-7.png')" :url="route('show', $content->slug)" :description="$content->description" />
                 @endforeach
+                <div class="">
+                    {{ $contents->links('pagination::bootstrap-5') }}
+                </div>
             @else
                 <div class="alert alert-danger" role="alert">{{ __('keywords.no_contents') }}</div>
             @endif

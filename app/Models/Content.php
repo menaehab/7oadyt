@@ -65,4 +65,9 @@ class Content extends Model implements HasMedia
     {
         return $this->hasMany(Review::class);
     }
+
+    public function getAvgRatingAttribute()
+    {
+        return $this->reviews()->avg('rating') ?? 0;
+    }
 }

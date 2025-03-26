@@ -69,3 +69,19 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+addEventListener("DOMContentLoaded", function () {
+    const container = document.querySelector(".star-rating");
+    const items = container.querySelectorAll(".star-rate");
+    const ratingInput = document.getElementById("rating-value");
+    container.onclick = (e) => {
+        items.forEach((item) => item.classList.remove("star-active"));
+        const rateValue = e.target.getAttribute("data-value");
+        const stars = parseInt(rateValue, 10);
+
+        for (let i = items.length - 1; i >= items.length - stars; i--) {
+            items[i].classList.add("star-active");
+        }
+        ratingInput.value = rateValue;
+    };
+});

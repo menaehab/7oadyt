@@ -333,6 +333,31 @@ footer {
     flex-direction: column;
     justify-content: space-between;
 }
+
 .card-text {
     flex-grow: 1;
+}
+
+.star-rating {
+    font-size: 1rem;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.gray-star {
+    color: #ccc;
+}
+
+.gold-star {
+    color: gold;
+}
+
+.star-rating i:hover,
+.star-rating i.active,
+.star-rating i:hover ~ i {
+    color: gold;
+}
+
+.star-active {
+    color: gold;
 }
