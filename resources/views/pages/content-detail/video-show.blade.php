@@ -8,7 +8,7 @@
                 <source src="{{ $content->getFirstMediaUrl('uploads') }}" type="video/mp4">
                 {{ __('keywords.video_not_supported') }}
             </video>
-
         </div>
+        <x-review-section :content-id="$content->id" :reviews="$reviews" />
     </div>
 @endsection
