@@ -46,9 +46,16 @@
                                     <i class="fa-solid gold-star fa-star"></i>
                                 @endfor
                             </div>
-                            <div class="bg-light p-3 rounded">
+                            <div class="mb-3 bg-light p-3 rounded">
                                 <p class="mb-0 text-muted">{{ $review->comment }}</p>
                             </div>
+                            @if (Auth::user()->id === $review->user_id)
+                                <form method="POST" action="{{ route('reviews.destroy', $review) }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-sm btn-danger">{{ __('keywords.delete') }}</button>
+                                </form>
+                            @endif
                         </div>
                     </div>
                 @endforeach

@@ -18,7 +18,7 @@ Route::middleware([
     Route::get("/show/{slug}",[BrowseController::class,"show"])->name("show");
 
     Route::post('contents/review/create', [ReviewController::class, 'store'])->name('reviews.store');
-    Route::delete('contents/review/{content}', [ReviewController::class,'destroy'])->name('reviews.destroy');
+    Route::delete('contents/review/{review}', [ReviewController::class,'destroy'])->name('reviews.destroy');
 
     Route::middleware('role:admin')->group(function () {
         Route::resource('categories', CategoryController::class);

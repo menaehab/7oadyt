@@ -86,4 +86,5 @@ return [
     'comment_updated_successfully' => 'تم تحديث التعليق بنجاح',
     'comment_deleted_successfully' => 'تم حذف التعليق بنجاح',
     'write_your_comment' => 'اكتب تعليقك هنا...',
+    'delete' => 'حذف',
 ];

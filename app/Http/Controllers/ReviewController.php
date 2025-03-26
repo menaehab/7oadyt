@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Review;
 use App\Http\Requests\ReviewRequest;
+use Illuminate\Support\Facades\Auth;
 
 class ReviewController extends Controller
 {
@@ -18,9 +19,10 @@ class ReviewController extends Controller
         return back()->with("success","تم اضافة التقييم بنجاح");
     }
 
-    public function destory(Review $review)
+    public function destroy(Review $review)
     {
-        if ($review->user_id != auth()->id()) {
+        if ($review->user_id != Auth::user()->id) {
+            @dd($review->user_id,Auth::user()->id);
             abort(403);
         }
         $review->delete();
