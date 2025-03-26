@@ -6,6 +6,15 @@
     <div class="card-body text-center d-flex flex-column justify-content-between" style="height: 50%;">
         <div>
             <h5 class="card-title">{{ $title }}</h5>
+            <div class="card-star-container">
+                @for ($i = 0; $i < 5; $i++)
+                    @if ($i < 5 - $avgRating)
+                        <i class="fa-solid gray-star fa-star"></i>
+                    @else
+                        <i class="fa-solid gold-star fa-star"></i>
+                    @endif
+                @endfor
+            </div>
             <p class="card-text text-muted" style="font-size: 0.9rem;">{{ Str::limit($description, 50) }}</p>
         </div>
         <a href="{{ $url }}" class="btn btn-success btn-sm">{{ __('keywords.read_more') }}</a>

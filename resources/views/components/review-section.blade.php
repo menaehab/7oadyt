@@ -39,11 +39,12 @@
                         <div class="card-body">
                             <h5 class="fw-bold text-success mb-2">{{ $review->user->name }}</h5>
                             <div class="mb-2">
-                                @for ($i = 0; $i < 5 - $review->rating; $i++)
-                                    <i class="fa-solid gray-star fa-star"></i>
-                                @endfor
-                                @for ($i = 0; $i < $review->rating; $i++)
-                                    <i class="fa-solid gold-star fa-star"></i>
+                                @for ($i = 0; $i < 5; $i++)
+                                    @if ($i < 5 - $review->rating)
+                                        <i class="fa-solid gray-star fa-star"></i>
+                                    @else
+                                        <i class="fa-solid gold-star fa-star"></i>
+                                    @endif
                                 @endfor
                             </div>
                             <div class="mb-3 bg-light p-3 rounded">

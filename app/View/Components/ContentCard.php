@@ -12,15 +12,17 @@ class ContentCard extends Component
     public $description;
     public $image;
     public $url;
+    public $avgRating;
     /**
      * Create a new component instance.
      */
-    public function __construct($title, $image, $url, $description = null)
+    public function __construct($title, $image, $url,$avgRating, $description = null)
     {
         $this->title = $title;
         $this->image = $image;
         $this->url = $url;
         $this->description = $description;
+        $this->avgRating = $avgRating;
     }
 
     /**
