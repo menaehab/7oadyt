@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\QuizController;
 use App\Http\Controllers\BrowseController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\CategoryController;
 
@@ -19,6 +20,9 @@ Route::middleware([
 
     Route::post('contents/review/create', [ReviewController::class, 'store'])->name('reviews.store');
     Route::delete('contents/review/{review}', [ReviewController::class,'destroy'])->name('reviews.destroy');
+
+    Route::get('quiz/{slug}', [QuizController::class, 'index'])->name('quiz.index');
+    Route::post('quiz/{slug}', [QuizController::class, 'submit'])->name('quiz.submit');
 
     Route::middleware('role:admin')->group(function () {
         Route::resource('categories', CategoryController::class);
