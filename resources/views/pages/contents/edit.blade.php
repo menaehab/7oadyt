@@ -94,6 +94,10 @@
             <div id="questions-container">
                 @foreach ($content->questions as $index => $question)
                     <div class="question-block border rounded p-3 mb-3 bg-light">
+                        @if ($question->id)
+                            <input type="hidden" name="questions[{{ $index }}][id]" value="{{ $question->id }}">
+                        @endif
+
                         <label>السؤال:</label>
                         <input type="text" name="questions[{{ $index }}][question]" class="form-control mb-2"
                             value="{{ $question->question }}" required>
@@ -102,6 +106,11 @@
                         <div class="row">
                             @foreach ($question->choices as $choiceIndex => $choice)
                                 <div class="col-md-6 mb-2">
+                                    @if ($choice->id)
+                                        <input type="hidden"
+                                            name="questions[{{ $index }}][choices][{{ $choiceIndex }}][id]"
+                                            value="{{ $choice->id }}">
+                                    @endif
                                     <input type="text"
                                         name="questions[{{ $index }}][choices][{{ $choiceIndex }}][choice]"
                                         class="form-control" value="{{ $choice->choice }}" required>
@@ -112,14 +121,12 @@
                         <label>الإجابة الصحيحة:</label>
                         <select name="questions[{{ $index }}][correct_choice]" class="form-select">
                             @foreach ($question->choices as $choiceIndex => $choice)
-                                <option value="{{ $choiceIndex }}"
-                                    {{ $question->correct_choice == $choiceIndex ? 'selected' : '' }}>
+                                <option value="{{ $choiceIndex }}" {{ $choice->is_correct ? 'selected' : '' }}>
                                     الاختيار {{ $choiceIndex + 1 }}
                                 </option>
                             @endforeach
                         </select>
 
-                        <!-- زر حذف السؤال -->
                         <button type="button" class="btn btn-danger mt-2 remove-question">حذف السؤال</button>
                     </div>
                 @endforeach
@@ -146,23 +153,25 @@
                 questionBlock.classList.add('question-block', 'border', 'rounded', 'p-3', 'mb-3', 'bg-light');
 
                 questionBlock.innerHTML = `
-                        <label>السؤال:</label>
-                        <input type="text" name="questions[${questionIndex}][question]" class="form-control mb-2" required>
-                        <label>الاختيارات:</label>
-                        <div class="row">
-                            ${[0,1,2,3].map(i => `
-                                                        <div class="col-md-6 mb-2">
-                                                            <input type="text" name="questions[${questionIndex}][choices][${i}][choice]" class="form-control" required>
-                                                        </div>`).join('')}
-                        </div>
-                        <label>الإجابة الصحيحة:</label>
-                        <select name="questions[${questionIndex}][correct_choice]" class="form-select">
-                            ${[0,1,2,3].map(i => `<option value="${i}">الاختيار ${i+1}</option>`).join('')}
-                        </select>
+        <label>السؤال:</label>
+        <input type="text" name="questions[${questionIndex}][question]" class="form-control mb-2" required>
 
-                        <!-- زر حذف السؤال -->
-                        <button type="button" class="btn btn-danger mt-2 remove-question">حذف السؤال</button>
-                    `;
+        <label>الاختيارات:</label>
+        <div class="row">
+            ${[0,1,2,3].map(i => `
+                    <div class="col-md-6 mb-2">
+                        <input type="text" name="questions[${questionIndex}][choices][${i}][choice]" class="form-control" required>
+                    </div>
+                `).join('')}
+        </div>
+
+        <label>الإجابة الصحيحة:</label>
+        <select name="questions[${questionIndex}][correct_choice]" class="form-select">
+            ${[0,1,2,3].map(i => `<option value="${i}">الاختيار ${i+1}</option>`).join('')}
+        </select>
+
+        <button type="button" class="btn btn-danger mt-2 remove-question">حذف السؤال</button>
+    `;
 
                 container.appendChild(questionBlock);
                 questionIndex++;

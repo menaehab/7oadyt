@@ -361,3 +361,10 @@ footer {
 .star-active {
     color: gold;
 }
+
+.custom-form-check-input {
+    width: 1em;
+    height: 1em;
+    margin-top: 0.25em;
+    vertical-align: top;
+}

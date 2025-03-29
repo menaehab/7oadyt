@@ -67,7 +67,7 @@
 
                         <label>{{ __('keywords.correct_answer') }}</label>
                         <select class="form-select" disabled>
-                            <option>{{ __('keywords.choice') }} {{ $question->correct_choice + 1 }}</option>
+                            <option>{{ $question->correctChoice->choice }}</option>
                         </select>
                     </div>
                 @endforeach

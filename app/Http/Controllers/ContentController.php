@@ -105,36 +105,29 @@ class ContentController extends Controller
     private function syncQuestions(Content $content, array $questions)
     {
         $newQuestionIds = [];
-
         foreach ($questions as $questionData) {
-            if (isset($questionData['id'])) {
-                $question = Question::updateOrCreate(
-                    ['id' => $questionData['id']],
-                    ['question' => $questionData['question'], 'content_id' => $content->id]
-                );
-            } else {
-                $question = $content->questions()->create(['question' => $questionData['question']]);
-            }
+            $question = Question::updateOrCreate(
+                ['id' => $questionData['id'] ?? null],
+                [
+                    'question' => $questionData['question'],
+                    'content_id' => $content->id
+                ]
+            );
 
             $newQuestionIds[] = $question->id;
             $newChoiceIds = [];
 
             foreach ($questionData['choices'] as $index => $choiceData) {
-                if (isset($choiceData['id'])) {
-                    $choice = Choice::updateOrCreate(
-                        ['id' => $choiceData['id']],
-                        [
-                            'choice' => $choiceData['choice'],
-                            'is_correct' => $index == $questionData['correct_choice'],
-                            'question_id' => $question->id
-                        ]
-                    );
-                } else {
-                    $choice = $question->choices()->create([
+                $isCorrect = $index == $questionData['correct_choice'];
+
+                $choice = Choice::updateOrCreate(
+                    ['id' => $choiceData['id'] ?? null],
+                    [
                         'choice' => $choiceData['choice'],
-                        'is_correct' => $index == $questionData['correct_choice']
-                    ]);
-                }
+                        'is_correct' => $isCorrect,
+                        'question_id' => $question->id
+                    ]
+                );
 
                 $newChoiceIds[] = $choice->id;
             }

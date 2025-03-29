@@ -87,4 +87,9 @@ return [
     'comment_deleted_successfully' => 'تم حذف التعليق بنجاح',
     'write_your_comment' => 'اكتب تعليقك هنا...',
     'delete' => 'حذف',
+    'test_your_understanding' => 'اختبار فهمك',
+    'understanding_test' => 'اختبار مقياس مستوي الفهم',
+    'previous_result' => 'النتيجة السابقة',
+    'percentage' => 'نسبة المئوية',
+    'submit' => 'تسليم',
 ];
