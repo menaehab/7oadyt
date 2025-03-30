@@ -61,7 +61,7 @@
         <div class="swiper latest-slider">
             <div class="swiper-wrapper">
                 @foreach ($blogs as $blog)
-                    <<div class="swiper-slide ">
+                    <div class="swiper-slide ">
                         <div class="card mx-2 my-4 shadow-sm overflow-hidden" style="width: 18rem; height: 22rem;">
                             <div style="height: 70%; overflow: hidden;">
                                 <img src="{{ $blog->getFirstMediaUrl('blogs_images') ? $blog->getFirstMediaUrl('blogs_images') : './images/book-1.png' }}"
@@ -80,9 +80,9 @@
                             </div>
                         </div>
 
+                    </div>
+                @endforeach
             </div>
-            @endforeach
-        </div>
         </div>
     </section>
     <!--latest section ends-->
