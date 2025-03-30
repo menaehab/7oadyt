@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\Review;
 use App\Models\Content;
 use App\Models\UserResult;
@@ -32,5 +33,17 @@ class BrowseController extends Controller
             return view("pages.content-detail.audio-show", compact("content","reviews","previousResult"));
         }
         return to_route('home');
+    }
+
+    public function blogs()
+    {
+        $blogs = Blog::paginate(16);
+        return view('pages.blog-browse', compact('blogs'));
+    }
+
+    public function blogShow($slug)
+    {
+        $blog = Blog::where('slug',$slug)->firstOrFail();
+        return view('pages.contents.blog-detail', compact('blog'));
     }
 }

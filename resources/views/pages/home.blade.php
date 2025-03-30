@@ -55,6 +55,38 @@
     </section>
     <!-- library section ends -->
 
+    <!--latest section starts-->
+    <section class="latest-blogs" id="latest-blogs">
+        <h1 class="heading"><span>{{ __('keywords.latest_blogs') }}</span></h1>
+        <div class="swiper latest-slider">
+            <div class="swiper-wrapper">
+                @foreach ($blogs as $blog)
+                    <div class="swiper-slide ">
+                        <div class="card mx-2 my-4 shadow-sm overflow-hidden" style="width: 18rem; height: 22rem;">
+                            <div style="height: 70%; overflow: hidden;">
+                                <img src="{{ $blog->getFirstMediaUrl('blogs_images') ? $blog->getFirstMediaUrl('blogs_images') : './images/book-1.png' }}"
+                                    class="card-img-top img-fluid" alt="{{ $blog->name }}"
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div class="card-body text-center d-flex flex-column justify-content-between"
+                                style="height: 50%;">
+                                <div>
+                                    <h5 class="card-title">{{ $blog->name }}</h5>
+                                    <p class="card-text text-muted" style="font-size: 0.9rem;">
+                                        {{ Str::limit($blog->content, 50) }}</p>
+                                </div>
+                                <a href="{{ route('browse.blogs.show', $blog->slug) }}"
+                                    class="btn btn-success btn-sm">{{ __('keywords.read_more') }}</a>
+                            </div>
+                        </div>
+
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+    <!--latest section ends-->
+
     <!-- Digital Guidance for Kids starts -->
     <section class="digital-guidance text-center" id="digital-guidance">
         <h1 class="heading mb-5"><span>{{ __('keywords.digital_guidance') }}</span></h1>
