@@ -18,8 +18,8 @@
                 </div>
             @endif
             <div class="mb-3">
-                <label for="description" class="form-label">{{ __('keywords.description') }}:</label>
-                <textarea name="description" class="form-control" rows="3" disabled>{{ $blog->description }}</textarea>
+                <label for="content" class="form-label">{{ __('keywords.blog_content') }}:</label>
+                <textarea name="content" class="form-control" rows="3" disabled>{{ $blog->content }}</textarea>
             </div>
         </div>
     </div>

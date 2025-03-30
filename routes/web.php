@@ -11,6 +11,7 @@ use App\Http\Controllers\CategoryController;
 
 Route::get("/",[HomeController::class,"index"])->name("home");
 Route::get("/browse/{type?}",[BrowseController::class,"index"])->name("browse");
+Route::get("/blog/browse/",[BrowseController::class,"blogs"])->name("browse.blogs");
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -18,6 +19,7 @@ Route::middleware([
     ])->group(function () {
 
         Route::get("/show/{slug}",[BrowseController::class,"show"])->name("show");
+        Route::get("/blog/show/{slug}",[BrowseController::class,"blogShow"])->name("browse.blogs.show");
 
         Route::post('contents/review/create', [ReviewController::class, 'store'])->name('reviews.store');
         Route::delete('contents/review/{review}', [ReviewController::class,'destroy'])->name('reviews.destroy');
@@ -31,4 +33,3 @@ Route::middleware([
             Route::resource('blogs', BlogController::class);
     });
 });
-
