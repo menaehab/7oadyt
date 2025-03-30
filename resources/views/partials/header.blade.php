@@ -100,5 +100,5 @@
     <a class="pages-bar-link" href="{{ route('browse', 'pdf') }}">{{ __('keywords.books') }}</a>
     <a class="pages-bar-link" href="{{ route('browse', 'video') }}">{{ __('keywords.videos') }}</a>
     <a class="pages-bar-link" href="{{ route('browse', 'audio') }}">{{ __('keywords.sounds') }}</a>
-    <a class="pages-bar-link" href="{{ route('browse', 'blog') }}">{{ __('keywords.blogs') }}</a>
+    <a class="pages-bar-link" href="{{ route('browse.blogs') }}">{{ __('keywords.blogs') }}</a>
 </div>
