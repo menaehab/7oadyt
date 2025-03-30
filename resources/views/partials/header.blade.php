@@ -29,9 +29,16 @@
                                 <li><a class="dropdown-item"
                                         href="{{ route('categories.index') }}">{{ __('keywords.categories') }}
                                     </a></li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="{{ route('contents.index') }}">{{ __('keywords.contents') }}</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="{{ route('blogs.index') }}">{{ __('keywords.blogs') }}</a>
+                                </li>
                             @endif
-                            <li><a class="dropdown-item"
-                                    href="{{ route('contents.index') }}">{{ __('keywords.contents') }}</a></li>
+
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -50,10 +57,16 @@
                             <a class="nav-link mt-2 text-end"
                                 href="{{ route('categories.index') }}">{{ __('keywords.categories') }}</a>
                         </li>
+                        <li class="nav-item d-lg-none">
+                            <a class="nav-link mt-2 text-end"
+                                href="{{ route('contents.index') }}">{{ __('keywords.contents') }}</a>
+                        </li>
+                        <li class="nav-item d-lg-none">
+                            <a class="nav-link mt-2 text-end"
+                                href="{{ route('blogs.index') }}">{{ __('keywords.blogs') }}</a>
+                        </li>
                     @endif
-                    <li class="nav-item d-lg-none">
-                        <a class="nav-link mt-2 text-end" href="#">{{ __('keywords.contents') }}</a>
-                    </li>
+
                     <li class="nav-item d-lg-none">
                         <form action="{{ route('logout') }}" method="POST" dir="rtl">
                             @csrf
@@ -87,4 +100,5 @@
     <a class="pages-bar-link" href="{{ route('browse', 'pdf') }}">{{ __('keywords.books') }}</a>
     <a class="pages-bar-link" href="{{ route('browse', 'video') }}">{{ __('keywords.videos') }}</a>
     <a class="pages-bar-link" href="{{ route('browse', 'audio') }}">{{ __('keywords.sounds') }}</a>
+    <a class="pages-bar-link" href="{{ route('browse', 'blog') }}">{{ __('keywords.blogs') }}</a>
 </div>
