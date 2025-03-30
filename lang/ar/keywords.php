@@ -92,4 +92,5 @@ return [
     'previous_result' => 'النتيجة السابقة',
     'percentage' => 'نسبة المئوية',
     'submit' => 'تسليم',
+    'latest_contents' => 'اخر تحديثات',
 ];

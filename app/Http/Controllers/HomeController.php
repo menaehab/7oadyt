@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Content;
+
 class HomeController extends Controller
 {
     public function index()
     {
-        return view("pages.home");
+        $contents = Content::take(6)->latest()->get();
+        return view("pages.home",compact("contents"));
     }
 }

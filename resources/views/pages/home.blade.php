@@ -29,15 +29,13 @@
 
     <!--latest section starts-->
     <section class="latest-books" id="latest-books">
-        <h1 class="heading"><span>{{ __('keywords.latest_books') }}</span></h1>
+        <h1 class="heading"><span>{{ __('keywords.latest_contents') }}</span></h1>
         <div class="swiper latest-slider">
             <div class="swiper-wrapper">
-                <x-book-card title="كتاب 1" image="./images/book-1.png" url="#" />
-                <x-book-card title="كتاب 2" image="./images/book-2.png" url="#" />
-                <x-book-card title="كتاب 3" image="./images/book-3.png" url="#" />
-                <x-book-card title="كتاب 4" image="./images/book-4.png" url="#" />
-                <x-book-card title="كتاب 5" image="./images/book-5.png" url="#" />
-                <x-book-card title="كتاب 6" image="./images/book-6.png" url="#" />
+                @foreach ($contents as $content)
+                    <x-book-card :title="$content->name" image="{{ $content->getFirstMediaUrl('images') }}" :url="route('show', $content->slug)"
+                        :description="$content->description" :avgRating="$content->avg_rating" />
+                @endforeach
             </div>
         </div>
     </section>

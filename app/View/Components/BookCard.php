@@ -10,17 +10,20 @@ class BookCard extends Component
 {
     public $title;
     public $image;
-
     public $url;
+    public $description;
+    public $avgRating;
 
     /**
      * Create a new component instance.
      */
-    public function __construct($title, $image,$url)
+    public function __construct($title, $image,$url, $description, $avgRating)
     {
         $this->title = $title;
         $this->image = $image;
         $this->url = $url;
+        $this->description = $description;
+        $this->avgRating = $avgRating;
     }
 
     /**
