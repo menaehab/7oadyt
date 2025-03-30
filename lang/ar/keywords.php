@@ -92,7 +92,7 @@ return [
     'previous_result' => 'النتيجة السابقة',
     'percentage' => 'نسبة المئوية',
     'submit' => 'تسليم',
-    'latest_contents' => 'اخر تحديثات',
+    'latest_contents' => 'اخر المحتويات',
     'digital_guidance' => 'إرشادات ممتعة لك على الإنترنت',
     'safe_exploration' => 'استمتع بالإنترنت بأمان',
     'digital_guidance_description' => 'اكتشف معنا كيف تستخدم الإنترنت والكتب الرقمية بطريقة ممتعة وآمنة',

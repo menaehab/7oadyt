@@ -390,3 +390,7 @@ ul {
 #digital-guidance li {
     font-size: 1.2rem;
 }
+
+.digital-guidance {
+    background: var(--border-gray);
+}
