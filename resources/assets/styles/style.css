@@ -51,6 +51,12 @@
     border: thick double var(--gray);
 }
 
+@media (max-width: 768px) {
+    .heading span {
+        font-size: 1.5rem;
+    }
+}
+
 section {
     padding: 5rem 9%;
 }
@@ -367,4 +373,20 @@ footer {
     height: 1em;
     margin-top: 0.25em;
     vertical-align: top;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#digital-guidance h1 {
+    font-size: 3rem;
+}
+
+#digital-guidance h5 {
+    font-size: 1.5rem;
+}
+
+#digital-guidance li {
+    font-size: 1.2rem;
 }
