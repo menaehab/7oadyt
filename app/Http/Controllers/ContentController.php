@@ -7,6 +7,7 @@ use App\Models\Content;
 use App\Models\Category;
 use App\Models\Question;
 use App\Http\Requests\ContentRequest;
+use Illuminate\Http\Request;
 
 class ContentController extends Controller
 {
@@ -97,6 +98,14 @@ class ContentController extends Controller
     {
         $content->delete();
         return redirect()->route('contents.index')->with('success', __('keywords.deleted_successfully'));
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+        $contents = Content::where('name', 'like', '%' . $search . '%')
+        ->orWhere('description', 'like', '%' . $search . '%')->paginate(16);
+        return view('pages.content-browse', compact('contents'));
     }
 
     /**
