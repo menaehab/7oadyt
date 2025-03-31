@@ -18,7 +18,7 @@ Children can also create their own accounts to track their progress.
 
 ## Technologies Used
 
--   **Laravel**: For backend management and server-side rendering
+-   **Laravel 12**: For backend management and server-side rendering
 -   **Blade & JavaScript**: For dynamic user interface creation
 -   **CSS & Bootstrap**: For responsive and user-friendly design
 
@@ -30,7 +30,7 @@ Children can also create their own accounts to track their progress.
 
 Ensure you have the following installed on your system:
 
--   **PHP** (version 8 or higher recommended)
+-   **PHP** (version 8.2 or higher recommended)
 -   **Composer**
 -   **MySQL** (or any database supported by Laravel)
 -   **Node.js & NPM** (for frontend tools)
@@ -39,7 +39,7 @@ Ensure you have the following installed on your system:
 
 ```sh
 # Clone the repository
-git clone <https://github.com/menaehab/kitabi.git>
+git clone https://github.com/menaehab/kitabi.git
 cd kitabi
 
 # Install Laravel dependencies
