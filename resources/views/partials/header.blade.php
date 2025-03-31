@@ -10,8 +10,9 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <form class="d-flex navbar-search" role="search">
-                <input class="form-control" type="search" placeholder="... ابحث هنا" aria-label="Search">
+            <form method="GET" action="{{ route('contents.search') }}" class="d-flex navbar-search" role="search">
+                <input name="search" value="{{ request('search') }}" class="form-control" type="search"
+                    placeholder="... ابحث هنا" aria-label="Search" required>
                 <button class="btn btn-outline-success" type="submit">
                     <i class="fas fa-search"></i>
                 </button>
@@ -37,16 +38,15 @@
                                     <a class="dropdown-item"
                                         href="{{ route('blogs.index') }}">{{ __('keywords.blogs') }}</a>
                                 </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
                             @endif
-
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
                             <li>
                                 <form action="{{ route('logout') }}" method="POST">
                                     @csrf
                                     <button type="submit"
-                                        class="nav-link mt-2 text-danger text-end">{{ __('keywords.logout') }}</button>
+                                        class="nav-link text-danger text-end">{{ __('keywords.logout') }}</button>
                                 </form>
                             </li>
                         </ul>
