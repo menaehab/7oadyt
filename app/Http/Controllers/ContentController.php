@@ -108,6 +108,13 @@ class ContentController extends Controller
         return view('pages.content-browse', compact('contents'));
     }
 
+    public function contentsByCategory($slug)
+    {
+        $category = Category::where('slug', $slug)->firstOrFail();
+        $contents = Content::where('category_id', $category->id)->paginate(16);
+        return view('pages.content-browse', compact('contents'));
+    }
+
     /**
      * Sync questions and choices with the content.
      */

@@ -95,12 +95,24 @@
 </nav>
 
 <div class="pages-bar text-center">
-    <a class="pages-bar-link" href="{{ route('home') }}">
+    {{-- <a class="pages-bar-link" href="{{ route('home') }}">
         🏠 {{ __('keywords.main') }}
-    </a>
+    </a> --}}
     <a class="pages-bar-link" href="{{ route('browse') }}">
         🌍 {{ __('keywords.all') }}
     </a>
+    <div class="custom-dropdown">
+        <button class="custom-dropdown-toggle">
+            📂 {{ __('keywords.categories') }}
+        </button>
+        <div class="custom-dropdown-menu">
+            @foreach ($categories as $category)
+                <a class="custom-dropdown-item" href="{{ route('contents.category', $category->slug) }}">
+                    {{ $category->name }}
+                </a>
+            @endforeach
+        </div>
+    </div>
     <a class="pages-bar-link" href="{{ route('browse', 'pdf') }}">
         📚 {{ __('keywords.books') }}
     </a>

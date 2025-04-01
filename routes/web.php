@@ -13,6 +13,7 @@ Route::get("/",[HomeController::class,"index"])->name("home");
 Route::get("/browse/{type?}",[BrowseController::class,"index"])->name("browse");
 Route::get("/blog/browse/",[BrowseController::class,"blogs"])->name("browse.blogs");
 Route::get('/search', [ContentController::class, 'search'])->name('contents.search');
+Route::get('/category/{slug}',[ContentController::class,'contentsByCategory'])->name('contents.category');
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
