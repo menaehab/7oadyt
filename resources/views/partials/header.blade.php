@@ -12,7 +12,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <form method="GET" action="{{ route('contents.search') }}" class="d-flex navbar-search" role="search">
                 <input name="search" value="{{ request('search') }}" class="form-control" type="search"
-                    placeholder="... ابحث هنا" aria-label="Search" required>
+                    placeholder="... ابحث هنا" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">
                     <i class="fas fa-search"></i>
                 </button>
@@ -95,10 +95,22 @@
 </nav>
 
 <div class="pages-bar text-center">
-    <a class="pages-bar-link" href="{{ route('home') }}">{{ __('keywords.main') }}</a>
-    <a class="pages-bar-link" href="{{ route('browse') }}">{{ __('keywords.all') }}</a>
-    <a class="pages-bar-link" href="{{ route('browse', 'pdf') }}">{{ __('keywords.books') }}</a>
-    <a class="pages-bar-link" href="{{ route('browse', 'video') }}">{{ __('keywords.videos') }}</a>
-    <a class="pages-bar-link" href="{{ route('browse', 'audio') }}">{{ __('keywords.sounds') }}</a>
-    <a class="pages-bar-link" href="{{ route('browse.blogs') }}">{{ __('keywords.blogs') }}</a>
+    <a class="pages-bar-link" href="{{ route('home') }}">
+        🏠 {{ __('keywords.main') }}
+    </a>
+    <a class="pages-bar-link" href="{{ route('browse') }}">
+        🌍 {{ __('keywords.all') }}
+    </a>
+    <a class="pages-bar-link" href="{{ route('browse', 'pdf') }}">
+        📚 {{ __('keywords.books') }}
+    </a>
+    <a class="pages-bar-link" href="{{ route('browse', 'video') }}">
+        🎥 {{ __('keywords.videos') }}
+    </a>
+    <a class="pages-bar-link" href="{{ route('browse', 'audio') }}">
+        🎵 {{ __('keywords.sounds') }}
+    </a>
+    <a class="pages-bar-link" href="{{ route('browse.blogs') }}">
+        📝 {{ __('keywords.blogs') }}
+    </a>
 </div>

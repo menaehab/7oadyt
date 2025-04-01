@@ -128,6 +128,17 @@ section {
     color: var(--green) !important;
 }
 
+.pages-bar-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+}
+
+.pages-bar-link i {
+    font-size: 16px;
+}
+
 .navbar-brand {
     color: var(--green) !important;
     font-size: 1.8rem;
