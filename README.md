@@ -14,6 +14,8 @@
 
 Children can also create their own accounts to track their progress.
 
+> **Client Project:** This project was developed for a client as part of a freelance contract.
+
 ---
 
 ## Technologies Used
