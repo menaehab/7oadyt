@@ -1,10 +1,10 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-# Kitabi - Children's Digital Library
+# 7oadyt - Children's Digital Library
 
 ## Project Description
 
-"Kitabi" is an interactive digital platform designed to provide a comprehensive library for children, featuring:
+"7oadyt" is an interactive digital platform designed to provide a comprehensive library for children, featuring:
 
 -   Illustrated digital books
 -   Educational and entertaining audio content
@@ -41,8 +41,8 @@ Ensure you have the following installed on your system:
 
 ```sh
 # Clone the repository
-git clone https://github.com/menaehab/kitabi.git
-cd kitabi
+git clone https://github.com/menaehab/7oadyt.git
+cd 7oadyt
 
 # Install Laravel dependencies
 composer install
