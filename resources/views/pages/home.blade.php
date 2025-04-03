@@ -92,7 +92,7 @@
         <h1 class="heading mb-5"><span>{{ __('keywords.digital_guidance') }}</span></h1>
         <div class="row mt-5 d-flex align-items-center">
             <div class="col-md-6">
-                <img src="./images/kid-reading.jpg" alt="{{ __('keywords.digital_guidance') }}"
+                <img src="./images/kid-reading-2.jpg" alt="{{ __('keywords.digital_guidance') }}"
                     class="img-fluid rounded-4">
             </div>
             <div class="col-md-6 text-end">

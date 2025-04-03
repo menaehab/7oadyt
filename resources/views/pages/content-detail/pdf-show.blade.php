@@ -7,6 +7,9 @@
             <embed src="{{ $content->getFirstMediaUrl('uploads') }}" width="100%" height="800px"
                 sandbox="allow-scripts allow-same-origin"></embed>
         </div>
+        <p class="border rounded p-3 my-4">
+            {{ $content->description }}
+        </p>
         <div class="quiz-section mt-5">
             <h2 class="mb-3">الاختبار</h2>
 
