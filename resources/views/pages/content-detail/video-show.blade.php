@@ -9,6 +9,9 @@
                 {{ __('keywords.video_not_supported') }}
             </video>
         </div>
+        <p class="border rounded p-3 my-4">
+            {{ $content->description }}
+        </p>
         <div class="quiz-section mt-5">
             <h2 class="mb-3">الاختبار</h2>
 

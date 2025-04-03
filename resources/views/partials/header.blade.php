@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
     <div class="container-fluid mx-5">
         <a class="navbar-brand" href="{{ route('home') }}">
-            <i class="fas fa-book"></i> {{ __('keywords.website_title') }}
+            <img src="./images/logo-2.png" width="50px" alt="">
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
