@@ -41,7 +41,7 @@ Ensure you have the following installed on your system:
 
 ```sh
 # Clone the repository
-git clone https://github.com/menaehab/7oadyt.git
+git clone https://github.com/menaehab/hawadit.git
 cd 7oadyt
 
 # Install Laravel dependencies
