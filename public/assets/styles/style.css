@@ -149,6 +149,12 @@ section {
     color: var(--green) !important;
 }
 
+.Home-books {
+    background: url("../../../public/images/banner-bg.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
 .Home-books .row {
     display: flex;
     align-items: center;
