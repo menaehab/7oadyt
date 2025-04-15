@@ -6,7 +6,7 @@
         <div class="row justify-content-center">
             <div class="col-md-10">
                 @if (session('result'))
-                    <div class="alert alert-success my-3 text-center">
+                    <div class="alert alert-primary my-3 text-center">
                         {{ session('result') }}
                     </div>
                 @endif
@@ -46,7 +46,7 @@
                                 @endforeach
                             </div>
 
-                            <button type="submit" class="btn btn-success w-100 mt-3">{{ __('keywords.submit') }}</button>
+                            <button type="submit" class="btn btn-primary w-100 mt-3">{{ __('keywords.submit') }}</button>
                         </form>
 
                         @if ($errors->any())

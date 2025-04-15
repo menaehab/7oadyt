@@ -3,10 +3,10 @@
 @section('content')
     <div class="container mt-4" dir=rtl>
         <h1 class="text-center mb-4">{{ __('keywords.categories') }}</h1>
-        @if (session('success'))
-            <div class="alert alert-success" role="alert">{{ session('success') }}</div>
+        @if (session('primary'))
+            <div class="alert alert-primary" role="alert">{{ session('primary') }}</div>
         @endif
-        <a href="{{ route('categories.create') }}" class="btn btn-success mb-4">{{ __('keywords.add_category') }}</a>
+        <a href="{{ route('categories.create') }}" class="btn btn-primary mb-4">{{ __('keywords.add_category') }}</a>
         @if ($categories->count() > 0)
             <table class="table table-striped">
                 <thead>

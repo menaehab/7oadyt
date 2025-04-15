@@ -52,7 +52,7 @@
                     <input type="file" name="file" class="form-control">
 
                     @if ($content->hasMedia('uploads'))
-                        <p>ملف حالي: <a class="text-success text-decoration-none"
+                        <p>ملف حالي: <a class="text-primary text-decoration-none"
                                 href="{{ $content->getFirstMediaUrl('uploads') }}"
                                 target="_blank">{{ __('keywords.show') }}</a></p>
                     @endif
@@ -67,7 +67,7 @@
                     <input type="file" name="image" class="form-control">
 
                     @if ($content->hasMedia('images'))
-                        <p>صورة حالية: <a class="text-success text-decoration-none"
+                        <p>صورة حالية: <a class="text-primary text-decoration-none"
                                 href="{{ $content->getFirstMediaUrl('images') }}"
                                 target="_blank">{{ __('keywords.show') }}</a>
                         </p>
@@ -134,13 +134,13 @@
 
             <div class="d-grid">
                 <button type="button" id="add-question"
-                    class="btn btn-outline-success">{{ __('keywords.add_new_question') }}</button>
+                    class="btn btn-outline-primary">{{ __('keywords.add_new_question') }}</button>
             </div>
 
             <hr>
 
             <div class="d-grid">
-                <button type="submit" class="btn btn-success">{{ __('keywords.update') }}</button>
+                <button type="submit" class="btn btn-primary">{{ __('keywords.update') }}</button>
             </div>
         </form>
 
@@ -159,10 +159,10 @@
         <label>الاختيارات:</label>
         <div class="row">
             ${[0,1,2,3].map(i => `
-                    <div class="col-md-6 mb-2">
-                        <input type="text" name="questions[${questionIndex}][choices][${i}][choice]" class="form-control" required>
-                    </div>
-                `).join('')}
+                            <div class="col-md-6 mb-2">
+                                <input type="text" name="questions[${questionIndex}][choices][${i}][choice]" class="form-control" required>
+                            </div>
+                        `).join('')}
         </div>
 
         <label>الإجابة الصحيحة:</label>

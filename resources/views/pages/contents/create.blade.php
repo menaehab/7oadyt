@@ -112,7 +112,7 @@
             </div>
 
             <div class="">
-                <button type="button" id="add-question" class="btn btn-outline-success">
+                <button type="button" id="add-question" class="btn btn-outline-primary">
                     {{ __('keywords.add_new_question') }}
                 </button>
             </div>
@@ -120,7 +120,7 @@
             <hr>
 
             <div class="">
-                <button type="submit" class="btn btn-success">{{ __('keywords.save') }}</button>
+                <button type="submit" class="btn btn-primary">{{ __('keywords.save') }}</button>
             </div>
 
             <script>

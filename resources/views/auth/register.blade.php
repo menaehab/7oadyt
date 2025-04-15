@@ -35,7 +35,7 @@
 
                 <!-- Submit button -->
                 <button type="submit" data-mdb-button-init data-mdb-ripple-init
-                    class="btn btn-success btn-block mb-4">{{ __('Register') }}</button>
+                    class="btn btn-primary btn-block mb-4">{{ __('Register') }}</button>
 
             </form>
         </div>

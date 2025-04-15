@@ -10,16 +10,13 @@
                 <p>
                     {{ __('keywords.home_description') }}
                 </p>
-                <a href="{{ route('browse') }}" class="btn btn-lg btn-success">{{ __('keywords.lets_go') }}</a>
+                <a href="{{ route('browse') }}" class="btn btn-lg btn-primary">{{ __('keywords.lets_go') }}</a>
             </div>
             <div class="swiper books-slider">
                 <div class="swiper-wrapper">
-                    <a href="{{ route('browse') }}" class="swiper-slide"><img src="./images/book-1.png" alt=""></a>
-                    <a href="{{ route('browse') }}" class="swiper-slide"><img src="./images/book-2.png" alt=""></a>
-                    <a href="{{ route('browse') }}" class="swiper-slide"><img src="./images/book-3.png" alt=""></a>
-                    <a href="{{ route('browse') }}" class="swiper-slide"><img src="./images/book-4.png" alt=""></a>
-                    <a href="{{ route('browse') }}" class="swiper-slide"><img src="./images/book-5.png" alt=""></a>
-                    <a href="{{ route('browse') }}" class="swiper-slide"><img src="./images/book-6.png" alt=""></a>
+                    <a href="{{ route('browse') }}" class="swiper-slide"><img src="./images/book1.png" alt=""></a>
+                    <a href="{{ route('browse') }}" class="swiper-slide"><img src="./images/book2.png" alt=""></a>
+                    <a href="{{ route('browse') }}" class="swiper-slide"><img src="./images/book3.png" alt=""></a>
                 </div>
                 <img src="./images/stand.png" class="stand" alt="">
             </div>
@@ -50,7 +47,7 @@
             <h3>{{ __('keywords.world_of_knowledge') }}</h3>
             <h1>{{ __('keywords.online_libary_free') }}</h1>
             <p>{{ __('keywords.online_libary_description') }}</p>
-            <a href="{{ route('browse') }}" class="btn btn-lg btn-success"> {{ __('keywords.lets_go') }}</a>
+            <a href="{{ route('browse') }}" class="btn btn-lg btn-primary"> {{ __('keywords.lets_go') }}</a>
         </div>
     </section>
     <!-- library section ends -->
@@ -76,7 +73,7 @@
                                         {{ Str::limit($blog->content, 50) }}</p>
                                 </div>
                                 <a href="{{ route('browse.blogs.show', $blog->slug) }}"
-                                    class="btn btn-success btn-sm">{{ __('keywords.read_more') }}</a>
+                                    class="btn btn-primary btn-sm">{{ __('keywords.read_more') }}</a>
                             </div>
                         </div>
 
@@ -92,11 +89,11 @@
         <h1 class="heading mb-5"><span>{{ __('keywords.digital_guidance') }}</span></h1>
         <div class="row mt-5 d-flex align-items-center">
             <div class="col-md-6">
-                <img src="./images/kid-reading-2.jpg" alt="{{ __('keywords.digital_guidance') }}"
+                <img src="{{ asset('images/instructions.jpg') }}" alt="{{ __('keywords.digital_guidance') }}"
                     class="img-fluid rounded-4">
             </div>
             <div class="col-md-6 text-end">
-                <h1 class="mb-3 text-success">{{ __('keywords.safe_exploration') }}</h1>
+                <h1 class="mb-3 text-primary">{{ __('keywords.safe_exploration') }}</h1>
                 <h5 class="mb-3">{{ __('keywords.digital_guidance_description') }}</h5>
                 <ul>
                     <li class="mb-2">{{ __('keywords.guideline_1') }}</li>
@@ -110,6 +107,7 @@
     <!-- Digital Guidance for Kids ends -->
 
     <div class="loader-container">
-        <img src="images/loader-img.gif" alt="">
+        <div class="spinner-border text-primary display-4" style="width: 5rem; height: 5rem;" role="status">
+        </div>
     </div>
 @endsection

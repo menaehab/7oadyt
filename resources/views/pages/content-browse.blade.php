@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             @if ($contents->count() > 0)
                 @foreach ($contents as $content)
-                    <x-content-card :title="$content->name" :avgRating="$content->avg_rating" :image="$content->getFirstMediaUrl('images') ?: asset('images/book-7.png')" :url="route('show', $content->slug)"
+                    <x-content-card :title="$content->name" :avgRating="$content->avg_rating" :image="$content->getFirstMediaUrl('images') ?: asset('images/book1.png')" :url="route('show', $content->slug)"
                         :description="$content->description" />
                 @endforeach
                 <div class="">
