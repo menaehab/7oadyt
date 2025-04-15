@@ -42,7 +42,7 @@ function loader() {
 }
 
 function fadeOut() {
-    setTimeout(loader, 4000);
+    setTimeout(loader, 1500);
 }
 
 document.addEventListener("DOMContentLoaded", fadeOut);

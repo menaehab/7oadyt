@@ -11,7 +11,7 @@
             </div>
             @if ($blog->hasMedia('blogs_images'))
                 <div class="mb-3">
-                    <p>ملف حالي: <a class="text-success text-decoration-none"
+                    <p>ملف حالي: <a class="text-primary text-decoration-none"
                             href="{{ $blog->getFirstMediaUrl('blogs_images') }}"
                             target="_blank">{{ __('keywords.show') }}</a>
                     </p>

@@ -21,7 +21,7 @@
                 </div>
 
                 <!-- Submit button -->
-                <button type="submit" class="btn btn-success btn-block mb-4">{{ __('Login') }}</button>
+                <button type="submit" class="btn btn-primary btn-block mb-4">{{ __('Login') }}</button>
             </form>
         </div>
     </div>

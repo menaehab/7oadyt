@@ -28,7 +28,7 @@
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>
-            <button type="submit" class="btn btn-success mb-4">{{ __('keywords.edit') }}</button>
+            <button type="submit" class="btn btn-primary mb-4">{{ __('keywords.edit') }}</button>
         </form>
     </div>
 @endsection

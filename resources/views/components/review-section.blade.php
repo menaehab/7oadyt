@@ -1,8 +1,8 @@
 <div dir="rtl">
     <div class="mt-4">
         <h3 class="mb-3 text-center">{{ __('keywords.rates') }}</h3>
-        @if (session('success'))
-            <div class="alert alert-success my-2">{{ session('success') }}</div>
+        @if (session('primary'))
+            <div class="alert alert-primary my-2">{{ session('primary') }}</div>
         @endif
         <form id="review-form" action="{{ route('reviews.store') }}" method="POST">
             @csrf
@@ -28,16 +28,16 @@
             @error('comment')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
-            <button type="submit" class="btn btn-success">{{ __('keywords.submit_comment') }}</button>
+            <button type="submit" class="btn btn-primary">{{ __('keywords.submit_comment') }}</button>
         </form>
     </div>
     @if ($reviews->count() > 0)
         <div class="mt-4">
             <div id="reviews-list">
                 @foreach ($reviews as $review)
-                    <div class="card mb-4 border-start border-success shadow-sm">
+                    <div class="card mb-4 border-start border-primary shadow-sm">
                         <div class="card-body">
-                            <h5 class="fw-bold text-success mb-2">{{ $review->user->name }}</h5>
+                            <h5 class="fw-bold text-primary mb-2">{{ $review->user->name }}</h5>
                             <div class="mb-2">
                                 @for ($i = 0; $i < 5; $i++)
                                     @if ($i < 5 - $review->rating)

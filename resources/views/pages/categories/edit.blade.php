@@ -11,7 +11,7 @@
                 <input type="text" name="name" value="{{ $category->name }}" class="form-control mb-4" id="name"
                     required>
             </div>
-            <button type="submit" class="btn btn-success">{{ __('keywords.edit') }}</button>
+            <button type="submit" class="btn btn-primary">{{ __('keywords.edit') }}</button>
         </form>
     </div>
 @endsection

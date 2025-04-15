@@ -12,7 +12,7 @@
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>
-            <button type="submit" class="btn btn-success mt-4">{{ __('keywords.add') }}</button>
+            <button type="submit" class="btn btn-primary mt-4">{{ __('keywords.add') }}</button>
         </form>
     </div>
 @endsection

@@ -13,7 +13,7 @@
             <form method="GET" action="{{ route('contents.search') }}" class="d-flex navbar-search" role="search">
                 <input name="search" value="{{ request('search') }}" class="form-control" type="search"
                     placeholder="... ابحث هنا" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">
+                <button class="btn btn-outline-primary" type="submit">
                     <i class="fas fa-search"></i>
                 </button>
             </form>
@@ -77,8 +77,8 @@
                 </ul>
             @else
                 <div class="navbar-nav ms-auto d-lg-block d-none">
-                    <a href="{{ route('login') }}" class="btn btn-outline-success">{{ __('Login') }}</a>
-                    <a href="{{ route('register') }}" class="btn btn-success mx-2">{{ __('Register') }}</a>
+                    <a href="{{ route('login') }}" class="btn btn-outline-primary">{{ __('Login') }}</a>
+                    <a href="{{ route('register') }}" class="btn btn-primary mx-2">{{ __('Register') }}</a>
                 </div>
 
                 <ul class="navbar-nav ms-auto d-lg-none">
@@ -94,16 +94,16 @@
     </div>
 </nav>
 
-<div class="pages-bar text-center">
-    {{-- <a class="pages-bar-link" href="{{ route('home') }}">
-        🏠 {{ __('keywords.main') }}
-    </a> --}}
-    <a class="pages-bar-link" href="{{ route('browse') }}">
-        🌍 {{ __('keywords.all') }}
+<div class="pages-bar text-center d-flex justify-content-center align-items-center flex-wrap">
+    <a class="pages-bar-link mt-2" href="{{ route('browse') }}">
+        <img src="{{ asset('images/all-icon.png') }}" width="25px" alt="icon"> {{ __('keywords.all') }}
     </a>
-    <div class="custom-dropdown">
+
+
+    <div class="custom-dropdown mt-2">
         <button class="custom-dropdown-toggle">
-            📂 {{ __('keywords.categories') }}
+            <img src="{{ asset('images/categories-icon.png') }}" width="25px" alt="icon">
+            {{ __('keywords.categories') }}
         </button>
         <div class="custom-dropdown-menu">
             @foreach ($categories as $category)
@@ -113,16 +113,38 @@
             @endforeach
         </div>
     </div>
-    <a class="pages-bar-link" href="{{ route('browse', 'pdf') }}">
-        📚 {{ __('keywords.books') }}
+    <a class="pages-bar-link mt-2" href="{{ route('browse', 'pdf') }}">
+        <img src="{{ asset('images/book-icon.png') }}" width="25px" alt="icon"> {{ __('keywords.books') }}
     </a>
-    <a class="pages-bar-link" href="{{ route('browse', 'video') }}">
-        🎥 {{ __('keywords.videos') }}
+
+    <a class="pages-bar-link mt-2" href="{{ route('browse', 'video') }}">
+        <img src="{{ asset('images/video-icon.png') }}" width="25px" alt="icon">
+        {{ __('keywords.videos') }}
     </a>
-    <a class="pages-bar-link" href="{{ route('browse', 'audio') }}">
-        🎵 {{ __('keywords.sounds') }}
+
+    <a class="pages-bar-link mt-2" href="{{ route('browse', 'audio') }}">
+        <img src="{{ asset('images/audio-icon.png') }}" width="25px" alt="icon">
+        {{ __('keywords.sounds') }}
     </a>
-    <a class="pages-bar-link" href="{{ route('browse.blogs') }}">
-        📝 {{ __('keywords.blogs') }}
+
+    <a class="pages-bar-link mt-2" href="{{ route('browse.blogs') }}">
+        <img src="{{ asset('images/articles-icon.png') }}" width="25px" alt="icon">
+        {{ __('keywords.blogs') }}
     </a>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const toggleBtn = document.querySelector(".custom-dropdown-toggle");
+        const dropdownMenu = document.querySelector(".custom-dropdown-menu");
+
+        toggleBtn.addEventListener("click", function(e) {
+            e.stopPropagation();
+            dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+        });
+
+        document.addEventListener("click", function() {
+            dropdownMenu.style.display = "none";
+        });
+    });
+</script>

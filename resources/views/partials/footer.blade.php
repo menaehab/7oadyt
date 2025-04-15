@@ -1,4 +1,4 @@
-<footer class="text-light py-4" dir="rtl">
+<footer class="text-light py-4 bg-dark" dir="rtl">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6 text-center text-md-end">
