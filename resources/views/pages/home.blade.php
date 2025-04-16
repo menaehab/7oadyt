@@ -61,7 +61,7 @@
                     <div class="swiper-slide ">
                         <div class="card mx-2 my-4 shadow-sm overflow-hidden" style="width: 18rem; height: 22rem;">
                             <div style="height: 70%; overflow: hidden;">
-                                <img src="{{ $blog->getFirstMediaUrl('blogs_images') ? $blog->getFirstMediaUrl('blogs_images') : './images/book-1.png' }}"
+                                <img src="{{ $blog->getFirstMediaUrl('blogs_images') ? $blog->getFirstMediaUrl('blogs_images') : asset('images/book1.png') }}"
                                     class="card-img-top img-fluid" alt="{{ $blog->name }}"
                                     style="width: 100%; height: 100%; object-fit: cover;">
                             </div>

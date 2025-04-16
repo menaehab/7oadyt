@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             @if ($blogs->count() > 0)
                 @foreach ($blogs as $blog)
-                    <x-blog-card :title="$blog->name" :image="$blog->getFirstMediaUrl('blogs_images') ?: asset('images/book-7.png')" :url="route('browse.blogs.show', $blog->slug)" :content="$blog->content" />
+                    <x-blog-card :title="$blog->name" :image="$blog->getFirstMediaUrl('blogs_images') ?: asset('images/book1.png')" :url="route('browse.blogs.show', $blog->slug)" :content="$blog->content" />
                 @endforeach
                 <div class="">
                     {{ $blogs->links('pagination::bootstrap-5') }}
