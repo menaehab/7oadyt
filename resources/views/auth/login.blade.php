@@ -11,12 +11,18 @@
                     <div class="form-outline mb-4">
                         <input type="email" name="email" id="loginName" class="form-control" />
                         <label class="form-label" for="loginName">{{ __('Email') }}</label>
+                        @error('email')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <!-- Password input -->
                     <div class="form-outline mb-4">
                         <input type="password" name="password" id="loginPassword" class="form-control" />
                         <label class="form-label" for="loginPassword">{{ __('Password') }}</label>
+                        @error('password')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
 

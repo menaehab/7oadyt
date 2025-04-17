@@ -12,17 +12,26 @@
                         <div data-mdb-input-init class="form-outline mb-4">
                             <input type="name" name="name" id="name" class="form-control" />
                             <label class="form-label" for="name">{{ __('Name') }}</label>
+                            @error('name')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <!-- Email input -->
                         <div data-mdb-input-init class="form-outline mb-4">
                             <input type="email" name="email" id="email" class="form-control" />
                             <label class="form-label" for="email">{{ __('Email') }}</label>
+                            @error('email')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
 
                         <!-- Password input -->
                         <div data-mdb-input-init class="form-outline mb-4">
                             <input type="password" name="password" id="password" class="form-control" />
                             <label class="form-label" for="password">{{ __('Password') }}</label>
+                            @error('password')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
 
                         <!-- Password Confirmation input -->
@@ -30,6 +39,9 @@
                             <input type="password" name="password_confirmation" id="password_confirmation"
                                 class="form-control" />
                             <label class="form-label" for="password_confirmation">{{ __('Confirm Password') }}</label>
+                            @error('password_confirmation')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                 </div>
 

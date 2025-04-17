@@ -35,3 +35,7 @@ Route::middleware([
             Route::resource('blogs', BlogController::class);
     });
 });
+
+Route::get("/home",function() {
+    return to_route("home");
+});
