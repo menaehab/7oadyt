@@ -28,8 +28,8 @@
                             <td class="text-center">
                                 <a href="{{ route('contents.show', $cotent->slug) }}" class="btn btn-sm btn-info"><i
                                         class="fa fa-eye"></i></a>
-                                <a href="{{ route('contents.edit', $cotent->slug) }}" class="btn btn-sm btn-primary"><i
-                                        class="fa fa-edit"></i></a>
+                                <a href="{{ route('contents.edit', $cotent->slug) }}"
+                                    class="btn btn-sm btn-primary my-1 my-sm-0"><i class="fa fa-edit"></i></a>
                                 <form id="delete-form-{{ $cotent->slug }}"
                                     action="{{ route('contents.destroy', $cotent->slug) }}" method="POST"
                                     style="display: none;">

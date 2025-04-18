@@ -24,8 +24,8 @@
                             <td class="text-center">
                                 <a href="{{ route('categories.show', $category->slug) }}" class="btn btn-sm btn-info"><i
                                         class="fa fa-eye"></i></a>
-                                <a href="{{ route('categories.edit', $category->slug) }}" class="btn btn-sm btn-primary"><i
-                                        class="fa fa-edit"></i></a>
+                                <a href="{{ route('categories.edit', $category->slug) }}"
+                                    class="btn btn-sm btn-primary my-1 my-sm-0"><i class="fa fa-edit"></i></a>
                                 <form id="delete-form-{{ $category->slug }}"
                                     action="{{ route('categories.destroy', $category->slug) }}" method="POST"
                                     style="display: none;">

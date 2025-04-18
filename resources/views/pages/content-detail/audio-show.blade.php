@@ -1,7 +1,7 @@
 @extends('partials.master')
 @section('page-title', $content->name)
 @section('content')
-    <div class="container my-4">
+    <div class="container my-4" dir="rtl">
         <h1 class="text-center mb-5">{{ $content->name }}</h1>
         <div class="pdf-card text-center">
             <audio controls>

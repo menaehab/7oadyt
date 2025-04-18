@@ -6,6 +6,10 @@
         <div class="pdf-card">
             <embed src="{{ $content->getFirstMediaUrl('uploads') }}" width="100%" height="800px"
                 sandbox="allow-scripts allow-same-origin"></embed>
+            {{-- <iframe
+                src="https://docs.google.com/gview?url={{ urlencode($content->getFirstMediaUrl('uploads')) }}&embedded=true"
+                style="width:100%; height:800px;" frameborder="0">
+            </iframe> --}}
         </div>
         <p class="border rounded p-3 my-4">
             {{ $content->description }}
