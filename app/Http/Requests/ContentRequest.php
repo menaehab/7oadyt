@@ -28,7 +28,7 @@ class ContentRequest extends FormRequest
             'file' => [
                 optional(request()->route('content'))->hasMedia('uploads') ? 'nullable' : 'required',
                 'file',
-                'max:50480',
+                'max:100960',
                 function ($attribute, $value, $fail) {
                     $type = request()->input('type');
                     $types = [
@@ -43,7 +43,7 @@ class ContentRequest extends FormRequest
                     }
                 },
             ],
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:4096',
             'description' => 'nullable|string',
             'questions' => 'nullable|array',
             'questions.*.question' => 'required_with:questions|string|max:255',
