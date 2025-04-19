@@ -52,6 +52,7 @@ class BlogController extends Controller
 
     public function destroy(Blog $blog): RedirectResponse
     {
+        $blog->clearMediaCollection('blogs_images');
         $blog->delete();
         return redirect()->route('blogs.index')->with('success', __('keywords.deleted_successfully'));
     }
