@@ -96,6 +96,8 @@ class ContentController extends Controller
      */
     public function destroy(Content $content)
     {
+        $content->clearMediaCollection('uploads');
+        $content->clearMediaCollection('images');
         $content->delete();
         return redirect()->route('contents.index')->with('success', __('keywords.deleted_successfully'));
     }
